@@ -1,9 +1,47 @@
 import maquina.*
 
-describe "group of tests ..." {
+test "algun dia se produjo 18" {
+  assert.that(maquina.algunDiaSeProdujo(18))
+}
 
-  test "test 1 ..." {
-    assert.that(true)
-  }
+test "el maximo producido es 62" {
+  assert.equals(maquina.maximoValorDeProduccion(),62)
+} 
 
+test "los valores de produccion pares" {
+  assert.equals([18,62],maquina.valoresDeProduccionPares())
+}
+
+test "la produccion es acotada entre 10 y 100" {
+  assert.that(maquina.produccionEsAcotada(10,100))
+}
+
+test "la produccion no es acotada entre 20 y 100" {
+  assert.notThat(maquina.produccionEsAcotada(20,100))
+}
+
+test "procucciones superiosres a 35"{
+  assert.equals([	43,49,62,39], maquina.produccionesSuperioresA(35))
+}
+
+test "prooducciones sumandole 5" {
+  assert.equals([48,23,54,67,38,44], maquina.produccionesSumando(5))
+}
+
+test "total producido" {
+  assert.equals(244, maquina.totalProducido())
+}
+
+test "ultiomo valor producido" {
+  assert.equals(39, maquina.ultimoValorDeProduccion())
+}
+
+test "cantidad Producciones Mayor A La Primera" {
+  assert.equals(2, maquina.cantidadProduccionesMayorALaPrimera())
+}
+
+
+test "promedio de produccion" {
+  maquina.editarProduccion(18,20)
+  assert.equals(41, maquina.promedioDeProduccion())
 }
